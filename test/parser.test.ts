@@ -97,6 +97,11 @@ describe('parser', () => {
       }),
     ).toMatchSnapshot())
 
+  it('should parse boolean attributes correctly', () =>
+    expect(
+      parser.parse('<button disabled>hi</button>', DEFAULT_PARSER_OPTIONS),
+    ).toMatchSnapshot())
+
   it('should match all AST snapshots', async () => {
     const dirents = await fs.readdir(path.join(__dirname, 'fixtures'), {
       withFileTypes: true,
